@@ -11,17 +11,17 @@
       },
       "transform": [
         {
-          "lookup": "properties.ADM0_A3",
+          "lookup": "properties.ADMIN",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/MahirAbrar/3179hw9/main/data/data.csv"
             },
-            "key": "Code",
+            "key": "Entity",
             "fields": ["death", "Entity", "Year"]
           }
         }
       ],
-      "mark": { "type": "geoshape", "stroke": "white" },
+      "mark": { "type": "geoshape", "stroke": "black" },
       "encoding": {
         "color": {
           "field": "death",
