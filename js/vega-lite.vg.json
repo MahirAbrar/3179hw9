@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "World Map with Air Pollution Deaths",
+  "title": "World Map showcasing deaths due to Air Pollution",
   "width": 800,
   "height": 400,
   "layer": [
@@ -17,13 +17,18 @@
               "url": "https://raw.githubusercontent.com/MahirAbrar/3179hw9/main/data/data.csv"
             },
             "key": "Code",
-            "fields": ["death"]
+            "fields": ["death", "Entity", "Year"]
           }
         }
       ],
-
       "mark": { "type": "geoshape", "stroke": "white" },
       "encoding": {
+        "color": {
+          "field": "death",
+          "type": "quantitative",
+          "scale": { "scheme": "reds" },
+          "title": "Death Rate"
+        },
         "tooltip": [
           {
             "field": "properties.NAME",
@@ -31,14 +36,9 @@
             "title": "Country"
           },
           {
-            "field": "Code",
+            "field": "death",
             "type": "quantitative",
             "title": "Death Rate"
-          },
-          {
-            "field": "properties.ADM0_A3",
-            "type": "nominal",
-            "title": "Code"
           }
         ]
       }
